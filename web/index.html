@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript">
+        function startListening() {
+            eel.listen()(function(result) {
+                document.getElementById("output").innerHTML += result + "<br>";
+                startListening(); // вызываем функцию снова для продолжения прослушивания
+            });
+        }
+    </script>
+		<title>Паралельный переводчик</title>
+</head>
+<body>
+    <center>
+    <h1>Паралельный переводчик</h1>
+    <h3>с английского на русский</h3>
+    <button onclick="startListening()">Start Listening</button>
+    <p id="output"></p>
+    </center>
+</body>
+</html>
